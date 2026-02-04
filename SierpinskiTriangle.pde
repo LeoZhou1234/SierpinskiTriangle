@@ -14,9 +14,9 @@ public void draw() {
   sierpinski(0,0,len);
   text("w/s or up/down to change base len", 50, 550);
   text("a/d or left/right to change start len", 50, 575);
-  text("current start len: " + Integer.toString(len), 50, 600);
-  text("current base len: " + Integer.toString(base), 50, 625);
-  text("num recursive calls: " + Integer.toString(numCalls), 50, 650);
+  text("current start len: " + len, 50, 600);
+  text("current base len: " + base, 50, 625);
+  text("num recursive calls: " + numCalls, 50, 650);
   //text("last recursion runtime: " + Long.toString((System.nanoTime()-startTime)/1_000_000) + " ms", 50, 675);
 }
 

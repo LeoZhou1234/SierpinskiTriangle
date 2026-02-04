@@ -9,29 +9,30 @@ public void setup() {
 
 public void draw() {
   background(50);
-  long startTime = System.nanoTime();
+  //long startTime = System.nanoTime();
   numCalls = 0;
   sierpinski(0,0,len);
-  text("w/s or up/down to change start len", 50, 550);
-  text("a/d or left/right to change base len", 50, 575);
+  text("w/s or up/down to change base len", 50, 550);
+  text("a/d or left/right to change start len", 50, 575);
   text("current start len: " + Integer.toString(len), 50, 600);
   text("current base len: " + Integer.toString(base), 50, 625);
   text("num recursive calls: " + Integer.toString(numCalls), 50, 650);
-  text("last recursion runtime: " + Long.toString((System.nanoTime()-startTime)/1_000_000) + " ms", 50, 675);
+  //text("last recursion runtime: " + Long.toString((System.nanoTime()-startTime)/1_000_000) + " ms", 50, 675);
 }
 
 void keyPressed() {
   if (key == 'w' || keyCode == UP) {
-    len += 10;
+    base += 5;
   }
   else if (key == 's' || keyCode == DOWN) {
-    len = Math.max(1, len-10);
-  }
-  else if (key == 'a' || keyCode == LEFT) {
     base = Math.max(1, base-5);
   }
+  else if (key == 'a' || keyCode == LEFT) {
+    
+    len = Math.max(1, len-10);
+  }
   else if (key == 'd' || keyCode == RIGHT) {
-    base += 5;
+    len += 10;
   }
   redraw();
 }
